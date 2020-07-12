@@ -26,3 +26,10 @@ Route::get('/pdf', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/pertanyaan','PertanyaanController@index');
+Route::get('/pertanyaan/create','PertanyaanController@create');
+Route::post('/pertanyaan','PertanyaanController@store');
+Route::get('/pertanyaan/{pertanyaan_id}','PertanyaanController@show');
+Route::get('/pertanyaan/{pertanyaan}/edit','PertanyaanController@edit');
+Route::patch('/pertanyaan/{pertanyaan}','PertanyaanController@update');
+

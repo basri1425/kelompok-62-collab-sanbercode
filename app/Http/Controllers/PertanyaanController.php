@@ -10,6 +10,10 @@ use Str;
 
 class PertanyaanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +54,7 @@ class PertanyaanController extends Controller
         $diskusi->save();
         $diskusi->tags()->sync($request->tags);
         
-        return back();
+        return redirect('/pertanyaan');
 
     }
 
@@ -95,7 +99,7 @@ class PertanyaanController extends Controller
   
         $diskusi->save();
         
-        return back();
+        return redirect('/pertanyaan');
     }
 
     /**
